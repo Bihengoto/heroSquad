@@ -27,21 +27,21 @@ public class App {
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 
-//        get("/squad", (request, response) -> {
-//            Map<String, Object> model = new HashMap<>();
-//            model.put("template", "templates/squad_form.vtl" );
-//            return new ModelAndView(model, "templates/layout.vtl");
-//        }, new VelocityTemplateEngine());
-
-        post("/squad", (request, response) -> {
+        get("/squad", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            String name = request.queryParams("name");
-            int size = Integer.parseInt(request.queryParams("size"));
-            String cause = request.queryParams("cause");
-            Squad newSquad= new Squad(name,size,cause);
-            model.put("template", "templates/squadSuccess.vtl");
-            return new ModelAndView(model, layout);
+            model.put("template", "templates/squad_form.vtl" );
+            return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
+
+//        post("/squad", (request, response) -> {
+//            Map<String, Object> model = new HashMap<>();
+//            String name = request.queryParams("name");
+//            int size = Integer.parseInt(request.queryParams("size"));
+//            String cause = request.queryParams("cause");
+//            Squad newSquad= new Squad(name,size,cause);
+//            model.put("template", "templates/squadSuccess.vtl");
+//            return new ModelAndView(model, layout);
+//        }, new VelocityTemplateEngine());
 
         //route to handle squads
         get("/squads", (request, response) -> {
