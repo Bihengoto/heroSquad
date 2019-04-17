@@ -21,11 +21,11 @@ public class App {
 
         port(port);
 
-        get("/", (request, response) -> {
-            Map<String, Object> model = new HashMap<>();
-            model.put("template", "templates/index.vtl" );
-            return new ModelAndView(model, "templates/layout.vtl");
-        }, new VelocityTemplateEngine());
+//        get("/", (request, response) -> {
+//            Map<String, Object> model = new HashMap<>();
+//            model.put("template", "templates/index.vtl" );
+//            return new ModelAndView(model, "templates/layout.vtl");
+//        }, new VelocityTemplateEngine());
 
         get("/squad", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
