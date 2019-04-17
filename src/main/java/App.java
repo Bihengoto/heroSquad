@@ -81,13 +81,13 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-//        get("squads/:id/heroes/new", (request, response) -> {
-//            Map<String, Object> model = new HashMap<String, Object>();
-//            Squad squad = Squad.find(Integer.parseInt(request.params(":id")));
-//            model.put("squad", squad);
-//            model.put("template", "templates/hero_form.vtl");
-//            return new ModelAndView(model, layout);
-//        }, new VelocityTemplateEngine());
+        get("squads/:id/heroes/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            Squad squad = Squad.find(Integer.parseInt(request.params(":id")));
+            model.put("squad", squad);
+            model.put("template", "templates/hero_form.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
 
         get("squads/:id/heroes/new", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
@@ -97,13 +97,13 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-        get("/heroes/:id", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            Hero hero = Hero.find(Integer.parseInt(request.params(":id")));
-            model.put("hero", hero);
-            model.put("template", "templates/hero.vtl");
-            return new ModelAndView(model, layout);
-        }, new VelocityTemplateEngine());
+//        get("/heroes/:id", (request, response) -> {
+//            Map<String, Object> model = new HashMap<String, Object>();
+//            Hero hero = Hero.find(Integer.parseInt(request.params(":id")));
+//            model.put("hero", hero);
+//            model.put("template", "templates/hero.vtl");
+//            return new ModelAndView(model, layout);
+//        }, new VelocityTemplateEngine());
 
         get("/heroes", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
