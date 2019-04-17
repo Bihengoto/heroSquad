@@ -53,19 +53,19 @@ public class App {
 
 
 
-//        get("squads/:id/heroes/new", (request, response) -> {
-//            Map<String, Object> model = new HashMap<>();
-//            Squad squad = Squad.find(Integer.parseInt(request.params(":id")));
-//            model.put("squad", squad);
-//            model.put("template", "templates/hero_form.vtl");
-//            return new ModelAndView(model, layout);
-//        }, new VelocityTemplateEngine());
-
-        get("/squads", (request, response) -> {
+        get("squads/:id/heroes/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("template", "templates/squad_form.vtl");
+            Squad squad = Squad.find(Integer.parseInt(request.params(":id")));
+            model.put("squad", squad);
+            model.put("template", "templates/hero_form.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
+
+//        get("/squads", (request, response) -> {
+//            Map<String, Object> model = new HashMap<>();
+//            model.put("template", "templates/squad_form.vtl");
+//            return new ModelAndView(model, layout);
+//        }, new VelocityTemplateEngine());
 
         get("squads/new", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
