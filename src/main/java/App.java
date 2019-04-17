@@ -44,22 +44,22 @@ public class App {
         }, new VelocityTemplateEngine());
 
 
-//        get("/squads", (request, response) -> {
-//            Map<String, Object> model = new HashMap<>();
-//            model.put("squads", Squad.all());
-//            model.put("template", "templates/squads.vtl");
-//            return new ModelAndView(model, layout);
-//        }, new VelocityTemplateEngine());
-
-
-        // route to handle a form for adding new heroes to squads
-        get("squads/:id/heroes/new", (request, response) -> {
+        get("/squads", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            Squad squad = Squad.find(Integer.parseInt(request.params(":id")));
-            model.put("squad", squad);
-            model.put("template", "templates/hero_form.vtl");
+            model.put("squads", Squad.all());
+            model.put("template", "templates/squads.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
+
+
+
+//        get("squads/:id/heroes/new", (request, response) -> {
+//            Map<String, Object> model = new HashMap<>();
+//            Squad squad = Squad.find(Integer.parseInt(request.params(":id")));
+//            model.put("squad", squad);
+//            model.put("template", "templates/hero_form.vtl");
+//            return new ModelAndView(model, layout);
+//        }, new VelocityTemplateEngine());
 
         get("/squads", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
